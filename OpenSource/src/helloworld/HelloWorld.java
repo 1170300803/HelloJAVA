@@ -10,6 +10,7 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 public class HelloWorld {
+  //main process draw the frame 
   public static void main(String[] args) {
     EventQueue.invokeLater(new Runnable() {
       public void run() {
@@ -26,14 +27,14 @@ class FontFrame extends JFrame {
   private static final long serialVersionUID = 1L;
 
   public FontFrame() {
-    setTitle("JAVA");
+    setTitle("JAVA");//set title
     setSize(Constant.DEFAULT_WIDTH, Constant.DEFAULT_HEIGHT);
-    FontComponent component = new FontComponent();
-    add(component);
+    FontComponent component = new FontComponent();//create components
+    add(component);//add components
   }
 }
 
-
+//add various components 
 class FontComponent extends JComponent {
   private static final long serialVersionUID = 1L;
 
