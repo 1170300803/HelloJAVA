@@ -6,7 +6,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
-
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
@@ -25,13 +24,10 @@ public class HelloWorld {
 
 class FontFrame extends JFrame {
   private static final long serialVersionUID = 1L;
-  
-  public static final int DEFAULT_WIDTH = 300;
-  public static final int DEFAULT_HEIGHT = 200;
-  
+
   public FontFrame() {
     setTitle("JAVA");
-    setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+    setSize(Constant.DEFAULT_WIDTH, Constant.DEFAULT_HEIGHT);
     FontComponent component = new FontComponent();
     add(component);
   }
@@ -43,26 +39,24 @@ class FontComponent extends JComponent {
 
   public void paintComponent(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
-    
+
     String message = "Hello World!";
-    
-    Font font = new Font("Serif", Font.BOLD, 36);
+
+    Font font = new Font("Serif", Font.BOLD, Constant.FONT_SIZE);
     g2.setFont(font);
-    
+
     FontRenderContext context = g2.getFontRenderContext();
     Rectangle2D bounds = font.getStringBounds(message, context);
-    
-    double x = (getWidth() - bounds.getWidth())/2;
-    double y = (getHeight() - bounds.getHeight())/2;
-    
+
+    double x = (getWidth() - bounds.getWidth()) / 2;
+    double y = (getHeight() - bounds.getHeight()) / 2;
+
     double ascent = -bounds.getY();
-    double baseY  = y + ascent;
-    
-    g2.drawString(message, (int)x, (int)baseY);
-    
+    double baseY = y + ascent;
+
+    g2.drawString(message, (int) x, (int) baseY);
+
   }
 }
-
-
 
 
