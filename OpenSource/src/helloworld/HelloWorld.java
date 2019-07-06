@@ -34,7 +34,7 @@ class FontFrame extends JFrame {
   }
 }
 
-
+//add various components 
 class FontComponent extends JComponent {
   private static final long serialVersionUID = 1L;
 
